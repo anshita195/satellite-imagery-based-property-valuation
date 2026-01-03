@@ -60,7 +60,6 @@ def fetch_satellite_image(
         url = base_url
     elif provider == "mapbox":
         # Mapbox Static Images API
-        # NOTE: Replace "satellite-v9" with another style if needed.
         style_id = "satellite-v9"
         # size is in format "WIDTHxHEIGHT"
         width, height = size.split("x")
@@ -164,21 +163,7 @@ def download_images_for_dataset(
 
 
 if __name__ == "__main__":
-    """
-    Example usage:
-
-    1. Create a .env file in the project root with:
-       MAPS_API_KEY=YOUR_API_KEY_HERE
-
-       OR set it as an environment variable:
-       - On Windows PowerShell:
-         $env:MAPS_API_KEY = "YOUR_API_KEY_HERE"
-
-    2. Run:
-       python data_fetcher.py
-
-    Adjust paths and column names below as needed.
-    """
+   
     API_KEY = os.getenv("MAPS_API_KEY", None)
     if API_KEY is None:
         raise RuntimeError(
@@ -186,7 +171,6 @@ if __name__ == "__main__":
             "Create a .env file with: MAPS_API_KEY=YOUR_API_KEY_HERE"
         )
 
-    # Update these paths/names based on your actual files
     TRAIN_CSV = "train(1)(train(1)).csv"
     TEST_CSV = "test2(test(1)).csv"
 
