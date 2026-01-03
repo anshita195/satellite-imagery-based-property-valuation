@@ -17,8 +17,6 @@ submission/
 ├── data_fetcher.py              # Script to download satellite images from API
 ├── eda_and_baseline.ipynb       # Exploratory data analysis and baseline model
 ├── model_training.ipynb         # Multimodal model training and evaluation
-├── submission.csv                # Final predictins on test dataset
-├── model_architecture.png        # Architecture diagram of the multimodal model
 └── README.md                     # This file
 ```
 
@@ -41,7 +39,7 @@ submission/
 
 ## Installation
 
-1. Clone or download this repository
+1. Clone this repository
 
 2. Install required packages:
 ```bash
@@ -81,9 +79,9 @@ Open `eda_and_baseline.ipynb` in Jupyter Notebook or Google Colab:
 5. Evaluate baseline performance
 
 **Expected Baseline Results:**
-- RMSE: ~$130,640
-- MAE: ~$71,824
-- R² Score: ~0.864
+- RMSE: ~$119,927.87
+- MAE: ~$68,561.88
+- R² Score: ~0.8741
 
 ### Step 3: Multimodal Model Training
 
@@ -147,9 +145,9 @@ The multimodal model consists of:
 ## Results
 
 ### Baseline Model (Tabular Only)
-- **RMSE**: $130,639.85
-- **MAE**: $71,824.34
-- **R² Score**: 0.8640
+- **RMSE**: $119,927.87
+- **MAE**: $68,561.88
+- **R² Score**: 0.8741
 
 ### Multimodal Model (Tabular + Satellite Images)
 - **RMSE**: $171,712.20
