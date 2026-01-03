@@ -17,7 +17,7 @@ submission/
 ├── data_fetcher.py              # Script to download satellite images from API
 ├── eda_and_baseline.ipynb       # Exploratory data analysis and baseline model
 ├── model_training.ipynb         # Multimodal model training and evaluation
-├── submission.csv                # Final predictions on test dataset
+├── submission.csv                # Final predictins on test dataset
 ├── model_architecture.png        # Architecture diagram of the multimodal model
 └── README.md                     # This file
 ```
@@ -39,10 +39,6 @@ submission/
 ### API Access
 - Google Maps Static API key OR Mapbox Static Images API key
 
-### Hardware
-- GPU recommended for model training (can run on CPU but will be slower)
-- Sufficient storage for satellite images (approximately 256x256 pixels per image)
-
 ## Installation
 
 1. Clone or download this repository
@@ -57,10 +53,6 @@ pip install tensorflow pandas numpy matplotlib seaborn scikit-learn opencv-pytho
    - Add your API key:
      ```
      MAPS_API_KEY=your_api_key_here
-     ```
-   - Alternatively, set as environment variable:
-     ```bash
-     export MAPS_API_KEY=your_api_key_here
      ```
 
 ## Usage
@@ -77,9 +69,6 @@ This script will:
 - Read the training and test CSV files
 - For each property, fetch a satellite image using its latitude/longitude coordinates
 - Save images to `images_train/` and `images_test/` directories
-- Use rate limiting to avoid API quota issues
-
-**Note**: Ensure your CSV files (`train(1)(train(1)).csv` and `test2(test(1)).csv`) are in the project directory before running.
 
 ### Step 2: Exploratory Data Analysis and Baseline
 
@@ -100,13 +89,13 @@ Open `eda_and_baseline.ipynb` in Jupyter Notebook or Google Colab:
 
 Open `model_training.ipynb` in Jupyter Notebook or Google Colab:
 
-1. **Data Loading and Preprocessing** (Cell 2-3):
+1. **Data Loading and Preprocessing**:
    - Load tabular data and preprocess features
    - Standardize numerical features
    - Create image path mappings
    - Set up data generators for efficient loading
 
-2. **Model Architecture** (Cell 4-5):
+2. **Model Architecture**:
    - Define multimodal architecture:
      - Tabular branch: Dense layers for numerical features
      - Image branch: Convolutional Neural Network (CNN) for satellite imagery
@@ -114,23 +103,20 @@ Open `model_training.ipynb` in Jupyter Notebook or Google Colab:
      - Regression head: Final dense layers for price prediction
    - Visualize model architecture
 
-3. **Model Training** (Cell 6):
+3. **Model Training**:
    - Train the multimodal model
    - Monitor training and validation loss
    - Adjust hyperparameters as needed
 
-4. **Model Explainability** (Cell 7):
+4. **Model Explainability**:
    - Generate Grad-CAM visualizations
    - Identify which regions in satellite images influence predictions
    - Analyze model attention patterns
 
-5. **Prediction and Evaluation** (Cell 8-9):
+5. **Prediction and Evaluation**:
    - Generate predictions on test set
    - Evaluate model performance on validation set
    - Compare with baseline model
-
-6. **Generate Submission File** (Cell 8):
-   - Create `submission.csv` with predictions in required format
 
 ## Model Architecture
 
@@ -170,8 +156,6 @@ The multimodal model consists of:
 - **MAE**: $108,564.51
 - **R² Score**: 0.7653
 
-**Note**: The multimodal model performance suggests that further hyperparameter tuning and architecture optimization may be needed. The integration of satellite imagery shows potential but requires additional refinement to outperform the baseline.
-
 ## Key Features
 
 1. **Programmatic Image Acquisition**: Automated satellite image fetching using property coordinates
@@ -203,10 +187,9 @@ The project uses a housing dataset with the following key features:
 
 1. Experiment with different CNN architectures (ResNet, EfficientNet)
 2. Try early fusion or attention mechanisms for better feature integration
-3. Implement data augmentation for satellite images
-4. Fine-tune hyperparameters more systematically
-5. Explore ensemble methods combining multiple models
-6. Add more sophisticated feature engineering for tabular data
+3. Fine-tune hyperparameters more systematically
+4. Explore ensemble methods combining multiple models
+5. Add more sophisticated feature engineering for tabular data
 
 ## Acknowledgments
 
