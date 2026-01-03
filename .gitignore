@@ -1,0 +1,5 @@
+images_test
+images_train
+.env
+*.png
+*.csv
