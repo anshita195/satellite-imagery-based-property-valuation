@@ -121,7 +121,7 @@ Open `model_training.ipynb` in Jupyter Notebook or Google Colab:
 The multimodal model consists of:
 
 1. **Tabular Input Branch**:
-   - Input: 18 numerical features (bedrooms, bathrooms, square footage, etc.)
+   - Input: 19 numerical features (bedrooms, bathrooms, square footage, etc.)
    - Processing: Two dense layers (64 → 32 neurons) with ReLU activation
 
 2. **Image Input Branch**:
